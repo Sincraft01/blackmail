@@ -1,0 +1,1 @@
+Fenotype font copyright © Emil Bertell. DEMOWARE. For commercial use buy full version of the font at http://fenotype.com. contact emil.bertell@fenotype.com

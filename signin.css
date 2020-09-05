@@ -1,3 +1,7 @@
+@font-face {
+  font-family: myFace;
+  src: url(text.ttf);
+}
 html,
 body {
   height: 100%;
@@ -55,6 +59,7 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   background-color: #f0f0f0;
+  text-decoration: red;
   box-shadow: inset 0px -0px 4px #a0a0a0;
 }
 .form-signin input:focus {
@@ -64,13 +69,23 @@ body {
 img {
 }
 .drshadow {
-  filter:drop-shadow(3px 6px 1px #adadad);
-  transition: 2s;
+  filter:drop-shadow(3px 12px 1px #adadad);
+  transition: 1s;
 }
 .drshadow:hover {
 filter:drop-shadow(1px 1px 2px #adadad);
-transition: 2s;
+transition: .5s;
 }
+
 .bmshadow {
   box-shadow:  0px 2px 5px rgb(255, 0, 128);
+}
+#test {
+  font-family: 'Exo 2', sans-serif;
+  color: teal;
+}
+
+#ao123 {
+  font-family: myFace;
+  color: teal;
 }
