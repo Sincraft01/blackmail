@@ -20,7 +20,7 @@ body {
   margin: auto;
   border: 1px #160d2b;
   border-radius: 40px;
-  box-shadow: 8px -5px 18px 0.5px #736d7f, -8px 10px 20px 3px #160d0b;
+  box-shadow: 8px -5px 18px 0.5px #792479, -8px 10px 20px 3px #160d0b;
 }
 .form-signin .checkbox {
   font-weight: 400;
@@ -47,7 +47,7 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  background-color: #120b23;
+  background-color: #5323c2;
 }
 img {
 }
