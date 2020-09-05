@@ -39,15 +39,15 @@ body {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
-  background-color: #120b23;
+  background-color: #23120b;
 
-  text-shadow: 2px 2px 1px #792479;
+  text-shadow: 2px 2px 3px #fdfdfd;
 }
 .form-signin input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  background-color: #5323c2;
+  background-color: #23120b;
 }
 img {
 }
