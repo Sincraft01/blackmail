@@ -10,9 +10,8 @@ body {
 body {
   display: flex;
   align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #fafafa;
+  
+  background-color: #291c35;
   margin: auto;
   color: magenta;
 }
@@ -29,7 +28,7 @@ body {
   margin: auto;
   border: 1px #160d2b;
   border-radius: 40px;
-  box-shadow: 0px -7px 7px  #d3d3d3, inset 0px 5px 5px #d3d3d3, 0px 9px 15px #383838,inset 0px -8px 10px #383838;
+  box-shadow: -5px -6px 10px  #5b3f75, inset 4px 4px 5px #1e1527, 6px 6px 10px #150f1b,inset -4px -4px 5px #5b3f75;
 }
 .form-signin .checkbox {
   font-weight: 400;
@@ -45,36 +44,54 @@ body {
   z-index: 2;
 
 }
+i {
+  border-radius: 35px;
+  box-shadow: 3px 3px 3px;
+}
 .form-signin input[type="email"] {
   margin-bottom: -1px;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
-  background-color: #f0f0f0;
-  box-shadow: inset 0px 5px 5px #a0a0a0;
-
+  background-color: #27162b;
+  border-color: #140b16;
+  
   
 }
 .form-signin input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  background-color: #f0f0f0;
+  border-bottom-right-radius: 35px;
+  border-bottom-left-radius: 35px;
+  border-color: #140b16;
+  background-color: #27162b;
   text-decoration: red;
-  box-shadow: inset 0px -0px 4px #a0a0a0;
 }
 .form-signin input:focus {
-  background-color: #636363;
-  font: white;
-}
-img {
-}
-.drshadow {
-  filter:drop-shadow(3px 12px 1px #adadad);
+  background-color: #4b3d69;
+  
   transition: 1s;
 }
+
+.form-signin input:hover {
+  background-color: #302744;
+  scale: .99;
+  transition:.5s;
+}
+.drshadow {
+  filter:drop-shadow(0px 10px 3px #09404981);
+  
+  transition: 1s;
+  
+}
 .drshadow:hover {
-filter:drop-shadow(1px 1px 2px #adadad);
+filter:drop-shadow(1px 1px 2px #ff00c8);
+scale: .8;
 transition: .5s;
+translate: 0px 10px;
 }
 
 .bmshadow {
@@ -88,4 +105,16 @@ transition: .5s;
 #ao123 {
   font-family: myFace;
   color: teal;
+  size: 10;
+ 
+}
+
+#ao123:hover {
+  stroke: #ff7300;
+  transition: 2s;
+}
+
+.lshadow {
+  border-radius:35px;
+  box-shadow:  -2px -2px 5px #5b3f75, 4px 4px 5px #150f1b ;
 }
