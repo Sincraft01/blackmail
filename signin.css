@@ -103,7 +103,7 @@ translate: 0px 10px;
 }
 
 #ao123 {
-  font-family: myFace;
+  
   color: teal;
   size: 10;
  
@@ -186,3 +186,7 @@ body {
 .text-white-50 { color: rgba(255, 255, 255, .5); }
 
 .bg-purple { background-color: #201b2b; }
+
+.navbar-brand {
+  text-transform: uppercases ;
+}
