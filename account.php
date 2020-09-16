@@ -1,80 +1,27 @@
-<?php
 
-/*
- * Copyright 2004-2017, AfterLogic Corp.
- * Licensed under AGPLv3 license or AfterLogic license
- * if commercial version of the product was purchased.
- * See the LICENSE file for a full license statement.
- */
+include_once '/var/www/webmail/libraries/afterlogic/api.php';
+if (class_exists('CApi') && CApi::IsValid()) {
+    $oApiDomainsManager = CApi::Manager('domains');
+    $oApiUsersManager = CApi::Manager('users');
 
-	// remove the following line for real use
-	
-
-	// Example of logging into WebMail account using email and password for incorporating into another web application
-
-	// utilizing API
-	include_once __DIR__.'/var/www/vhosts/thebinbandit.com/BlackMail/libraries/afterlogic/api.php';
-
-	if (class_exists('CApi') && CApi::IsValid())
-	{
-		// data for logging into account
-		$sEmail = 'user@domain.com';
-		$sPassword = '12345';
-
-		$sFolder = 'INBOX';
-		$iOffset = 0;
-		$iLimit = 5;
-
-		$oCollection = null;
-
-		try
-		{
-			// Getting required API class
-			$oApiIntegratorManager = CApi::Manager('integrator');
-
-			// attempting to obtain object for account we're trying to log into
-			$oAccount = $oApiIntegratorManager->loginToAccount($sEmail, $sPassword);
-			if ($oAccount)
-			{
-				$oApiMailManager = CApi::Manager('mail');
-				$oCollection =  $oApiMailManager->getMessageList($oAccount, $sFolder, $iOffset, $iLimit);
-
-				/* @var $oCollection CApiMailMessageCollection */
-				if ($oCollection)
-				{
-
-					echo '<b>'.$oAccount->Email.':</b><br />';
-					echo '<pre>';
-					echo 'Folder:   '.$sFolder."\n";
-					echo 'Count:    '.$oCollection->MessageCount."\n"; // $oCollection->MessageResultCount
-					echo 'Unread:   '.$oCollection->MessageUnseenCount."\n";
-					echo 'List:   '."\n";
-
-					$oCollection->ForeachList(function (/* @var $oMessage CApiMailMessage */ $oMessage) {
-						$oFrom = /* @var $oFrom \MailSo\Mime\EmailCollection */ $oMessage->getFrom();
-						echo "\t".htmlentities($oMessage->getUid().') '.$oMessage->getSubject().($oFrom ? ' ('.$oFrom->ToString().')' : ''))."\n";
-					});
-
-					echo '</pre>';
-				}
-				else
-				{
-					echo $oApiMailManager->GetLastErrorMessage();
-				}
-			}
-			else
-			{
-				// login error
-				echo $oApiIntegratorManager->GetLastErrorMessage();
-			}
-		}
-		catch (Exception $oException)
-		{
-			// login error
-			echo $oException->getMessage();
-		}
-	}
-	else
-	{
-		echo 'AfterLogic API isn\'t available';
-	}
+    $oDomain = $oApiDomainsManager->getDomainByName('domain.com');
+    /* Or, you can access default domain instead */
+    /* $oDomain = $oApiDomainsManager->getDefaultDomain(); */
+    if ($oDomain) {
+        $oAccount = new CAccount($oDomain);
+        
+        $oAccount->Email = $_POST['sEmail'];
+        $oAccount->IncomingMailLogin = $_POST['sEmail'];
+        $oAccount->IncomingMailPassword = $_POST['sPassword'];
+        
+        if ($oApiUsersManager->createAccount($oAccount, false)) {
+            echo 'Account '.$oAccount->Email.' is created successfully.';
+        } else {
+            echo $oApiUsersManager->GetLastErrorMessage();
+        }
+    } else {
+        echo 'Domain doesn\'t exist';
+    }
+} else {
+    echo 'WebMail API isn\'t available';
+}
