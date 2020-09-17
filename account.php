@@ -1,5 +1,5 @@
-
-include_once '/var/www/webmail/libraries/afterlogic/api.php';
+<?php
+include_once 'https://thebinbandit.com/BlackMail/libraries/afterlogic/api.php';
 if (class_exists('CApi') && CApi::IsValid()) {
     $oApiDomainsManager = CApi::Manager('domains');
     $oApiUsersManager = CApi::Manager('users');
@@ -25,3 +25,4 @@ if (class_exists('CApi') && CApi::IsValid()) {
 } else {
     echo 'WebMail API isn\'t available';
 }
+?>
