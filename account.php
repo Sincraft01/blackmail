@@ -1,5 +1,5 @@
 <?php
-include_once 'https://thebinbandit.com/BlackMail/libraries/afterlogic/api.php';
+include_once __DIR__.'https://thebinbandit.com/BlackMail/libraries/afterlogic/api.php';
 if (class_exists('CApi') && CApi::IsValid()) {
     $oApiDomainsManager = CApi::Manager('domains');
     $oApiUsersManager = CApi::Manager('users');
