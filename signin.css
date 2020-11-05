@@ -32,8 +32,10 @@ body {
   max-width: 330px;
   padding: 15px;
   border: 1px #160d2b;
-  border-radius: 40px;
-  box-shadow: -5px -6px 10px  #5b3f75, inset 4px 4px 5px #1e1527, 6px 6px 10px #150f1b,inset -4px -4px 5px #5b3f75;
+  border-radius: 100px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: -5px -6px 10px  #26ebda, inset 4px 4px 5px #18e4c2, 6px 6px 10px #024347,inset -4px -4px 5px #054747;
 }
 .form-signin .checkbox {
   font-weight: 400;
@@ -122,7 +124,7 @@ translate: 0px 10px;
 
 .lshadow {
   border-radius:35px;
-  box-shadow:  -2px -2px 5px #5b3f75, 4px 4px 5px #150f1b ;
+  box-shadow:  -2px -2px 5px #05d7e6, 4px 4px 5px #150f1b ;
 }
 
 html,
