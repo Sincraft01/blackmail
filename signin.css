@@ -11,7 +11,7 @@ body {
   display: flex;
   align-items: center;
   
-  background-color: #291c35;
+  background-color: #fdfdfd;
   margin: auto;
   color: magenta;
   padding: unset;
@@ -61,7 +61,7 @@ i {
 
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
-  background-color: #27162b;
+  background-color: #afafaf;
   border-color: #140b16;
   
   
@@ -73,7 +73,7 @@ i {
   border-bottom-right-radius: 35px;
   border-bottom-left-radius: 35px;
   border-color: #140b16;
-  background-color: #27162b;
+    background-color: #afafaf;
   text-decoration: red;
 }
 .form-signin input:focus {
@@ -131,7 +131,4 @@ body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
 }
 
-body {
-  padding-top: 0;
-  
-}
+
